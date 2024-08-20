@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenePet - Hypoallergenic Pet Cloning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --accent-color: #FFC107;
+            --text-color: #333333;
+            --bg-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        .hero {
+            background-image: url('https://example.com/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding-top: 40vh;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: darken(var(--primary-color), 10%);
+            border-color: darken(var(--primary-color), 10%);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GenePet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="#cta" class="btn btn-primary ms-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Create Hypoallergenic Clones of Your Beloved Pets</h1>
+            <p>Experience the joy of pet ownership without the allergies</p>
+            <a href="#cta" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-dna feature-icon"></i>
+                    <h3>Hypoallergenic DNA</h3>
+                    <p>Our advanced genetic modification ensures your cloned pet is 100% hypoallergenic.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h3>Identical Personality</h3>
+                    <p>Your cloned pet retains the same lovable personality as the original.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Enhanced Health</h3>
+                    <p>Genetic improvements for increased lifespan and reduced health issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://example.com/process-infographic.jpg" alt="GenePet Process" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <ol>
+                        <li>Submit a DNA sample from your pet</li>
+                        <li>Our lab processes and modifies the genetic material</li>
+                        <li>The modified DNA is implanted into a host cell</li>
+                        <li>We nurture the embryo and deliver your new hypoallergenic pet</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Benefits of GenePet</h2>
+            <div class="row">
+                <div class="col-md-3 text-center mb-4">
+                    <h3 class="display-4 text-primary">99%</h3>
+                    <p>Reduction in allergic reactions</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <h3 class="display-4 text-primary">100%</h3>
+                    <p>Genetic match to original pet</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <h3 class="display-4 text-primary">5+</h3>
+                    <p>Years added to average lifespan</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <h3 class="display-4 text-primary">24/7</h3>
+                    <p>Support and aftercare</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://example.com/testimonial1.jpg" alt="Jane Doe" class="testimonial-img">
+                        <h4>Jane Doe</h4>
+                        <p>"I never thought I could own a cat due to my allergies. Thanks to GenePet, I now have a beautiful, hypoallergenic clone of my childhood pet!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://example.com/testimonial2.jpg" alt="John Smith" class="testimonial-img">
+                        <h4>John Smith</h4>
+                        <p>"The process was smooth and the results are amazing. My new dog is just like my old buddy, but without the allergy issues!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://example.com/testimonial3.jpg" alt="Emma Wilson" class="testimonial-img">
+                        <h4>Emma Wilson</h4>
+                        <p>"GenePet has revolutionized pet ownership for allergy sufferers. I'm so grateful for this incredible technology!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Experience Allergy-Free Pet Ownership?</h2>
+            <p class="mb-4">Join the GenePet revolution and create your hypoallergenic pet clone today!</p>
+            <a href="#" class="btn btn-light btn-lg">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>GenePet</h4>
+                    <p>Creating hypoallergenic pet clones with love and science.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Stay Connected</h4>
+                    <div class="social-icons mb-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 GenePet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('navbar-scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Feature icons animation
+        gsap.from('.feature-icon', {
+            scrollTrigger: {
+                trigger: '#features',
+                start: 'top center'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1
+        });
+
+        // Testimonial cards animation
+        gsap.from('.testimonial-card', {
+            scrollTrigger: {
+                trigger: '#testimonials',
+                start: 'top center'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1
+        });
+
+// Benefits counter animation
+const benefitCounters = document.querySelectorAll('#benefits .display-4');
+        benefitCounters.forEach(counter => {
+            const target = parseInt(counter.innerText);
+            gsap.to(counter, {
+                scrollTrigger: {
+                    trigger: '#benefits',
+                    start: 'top center'
+                },
+                innerText: target,
+                duration: 2,
+                snap: { innerText: 1 },
+                onUpdate: function() {
+                    counter.innerText = Math.ceil(this.targets()[0].innerText);
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        gsap.to('.hero', {
+            scrollTrigger: {
+                scrub: true
+            },
+            y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+            ease: 'none'
+        });
+
+        // How It Works section animation
+        gsap.from('#how-it-works .row', {
+            scrollTrigger: {
+                trigger: '#how-it-works',
+                start: 'top center'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1
+        });
+
+        // CTA section animation
+        gsap.from('#cta h2, #cta p, #cta .btn', {
+            scrollTrigger: {
+                trigger: '#cta',
+                start: 'top center'
+            },
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+            duration: 1
+        });
+    </script>
+</body>
+</html>
