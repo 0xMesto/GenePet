@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenePet - Hypoallergenic Pet Cloning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>GenePet - Revolutionary Hypoallergenic Pet Cloning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #2196F3;
-            --accent-color: #FFC107;
+            --primary-color: #6C63FF;
+            --secondary-color: #4CAF50;
+            --accent-color: #FF6B6B;
             --text-color: #333333;
             --bg-color: #FFFFFF;
+            --light-bg: #F8F9FA;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
         }
@@ -27,19 +28,49 @@
         }
 
         .navbar {
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
         }
 
         .navbar-scrolled {
-            background-color: rgba(255, 255, 255, 0.9) !important;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .hero {
-            background-image: url('https://example.com/hero-image.jpg');
+            background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
             position: relative;
+            overflow: hidden;
         }
 
         .hero-overlay {
@@ -48,7 +79,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.8), rgba(76, 175, 80, 0.8));
         }
 
         .hero-content {
@@ -60,23 +91,46 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: darken(var(--primary-color), 10%);
             border-color: darken(var(--primary-color), 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
         }
 
         .feature-icon {
@@ -86,16 +140,50 @@
         }
 
         .how-it-works {
-            background-color: #f8f9fa;
-            padding: 4rem 0;
+            background-color: var(--light-bg);
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, var(--light-bg) 50%, transparent 50%);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .process-step .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .testimonial-card {
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
         }
 
         .testimonial-img {
@@ -104,29 +192,80 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
         }
 
         .cta-section {
             background-color: var(--primary-color);
             color: white;
-            padding: 4rem 0;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
         footer {
             background-color: #333;
             color: white;
-            padding: 3rem 0;
+            padding: 4rem 0 2rem;
         }
 
         .social-icons a {
             color: white;
             font-size: 1.5rem;
             margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
@@ -137,7 +276,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">GenePet</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,7 +288,7 @@
                         <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                        <a class="nav-link" href="#how-it-works">Process</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#testimonials">Testimonials</a>
@@ -167,31 +306,37 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>Create Hypoallergenic Clones of Your Beloved Pets</h1>
-            <p>Experience the joy of pet ownership without the allergies</p>
-            <a href="#cta" class="btn btn-primary btn-lg">Learn More</a>
+            <h1 class="mb-4">Revolutionizing Pet Ownership</h1>
+            <p class="mb-5">Experience the joy of hypoallergenic pet clones</p>
+            <a href="#cta" class="btn btn-primary btn-lg">Discover GenePet</a>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Key Features</h2>
+            <h2 class="text-center mb-5">Cutting-Edge Features</h2>
             <div class="row">
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-dna feature-icon"></i>
-                    <h3>Hypoallergenic DNA</h3>
-                    <p>Our advanced genetic modification ensures your cloned pet is 100% hypoallergenic.</p>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-dna feature-icon"></i>
+                        <h3>Hypoallergenic DNA</h3>
+                        <p>Our advanced genetic modification ensures your cloned pet is 100% hypoallergenic, allowing allergy sufferers to enjoy pet ownership.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-heart feature-icon"></i>
-                    <h3>Identical Personality</h3>
-                    <p>Your cloned pet retains the same lovable personality as the original.</p>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-heart feature-icon"></i>
+                        <h3>Identical Personality</h3>
+                        <p>Experience the same bond with your cloned pet, as we preserve the unique personality traits of your original companion.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>Enhanced Health</h3>
-                    <p>Genetic improvements for increased lifespan and reduced health issues.</p>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Enhanced Health</h3>
+                        <p>Benefit from our genetic improvements that increase lifespan and reduce common health issues in pets.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,18 +345,35 @@
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <h2 class="text-center mb-5">How It Works</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="https://example.com/process-infographic.jpg" alt="GenePet Process" class="img-fluid">
+            <h2 class="text-center mb-5">Our Revolutionary Process</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>DNA Collection</h4>
+                        <p>Submit a small DNA sample from your beloved pet.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <ol>
-                        <li>Submit a DNA sample from your pet</li>
-                        <li>Our lab processes and modifies the genetic material</li>
-                        <li>The modified DNA is implanted into a host cell</li>
-                        <li>We nurture the embryo and deliver your new hypoallergenic pet</li>
-                    </ol>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Genetic Modification</h4>
+                        <p>Our lab modifies the DNA to ensure hypoallergenic properties.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Cloning Process</h4>
+                        <p>The modified DNA is used to create an embryo.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Welcome Home</h4>
+                        <p>Receive your new hypoallergenic pet clone.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,23 +382,35 @@
     <!-- Benefits Section -->
     <section id="benefits" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Benefits of GenePet</h2>
+            <h2 class="text-center mb-5">The GenePet Advantage</h2>
             <div class="row">
-                <div class="col-md-3 text-center mb-4">
-                    <h3 class="display-4 text-primary">99%</h3>
-                    <p>Reduction in allergic reactions</p>
+                <div class="col-md-3">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-percentage benefit-icon"></i>
+                        <h3 class="display-4 text-primary">99%</h3>
+                        <p>Reduction in allergic reactions</p>
+                    </div>
                 </div>
-                <div class="col-md-3 text-center mb-4">
-                    <h3 class="display-4 text-primary">100%</h3>
-                    <p>Genetic match to original pet</p>
+                <div class="col-md-3">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-dna benefit-icon"></i>
+                        <h3 class="display-4 text-primary">100%</h3>
+                        <p>Genetic match to original pet</p>
+                    </div>
                 </div>
-                <div class="col-md-3 text-center mb-4">
-                    <h3 class="display-4 text-primary">5+</h3>
-                    <p>Years added to average lifespan</p>
+                <div class="col-md-3">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-heartbeat benefit-icon"></i>
+                        <h3 class="display-4 text-primary">5+</h3>
+                        <p>Years added to average lifespan</p>
+                    </div>
                 </div>
-                <div class="col-md-3 text-center mb-4">
-                    <h3 class="display-4 text-primary">24/7</h3>
-                    <p>Support and aftercare</p>
+                <div class="col-md-3">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-headset benefit-icon"></i>
+                        <h3 class="display-4 text-primary">24/7</h3>
+                        <p>Support and aftercare</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,27 +419,30 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <h2 class="text-center mb-5">Voices of Happy Pet Owners</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="testimonial-card">
-                        <img src="https://example.com/testimonial1.jpg" alt="Jane Doe" class="testimonial-img">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jane Doe" class="testimonial-img">
                         <h4>Jane Doe</h4>
-                        <p>"I never thought I could own a cat due to my allergies. Thanks to GenePet, I now have a beautiful, hypoallergenic clone of my childhood pet!"</p>
+                        <p class="text-muted">Cat Lover</p>
+                        <p>"GenePet made my dream of owning a cat a reality. No more allergies, just pure joy!"</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="testimonial-card">
-                        <img src="https://example.com/testimonial2.jpg" alt="John Smith" class="testimonial-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith" class="testimonial-img">
                         <h4>John Smith</h4>
-                        <p>"The process was smooth and the results are amazing. My new dog is just like my old buddy, but without the allergy issues!"</p>
+                        <p class="text-muted">Dog Enthusiast</p>
+                        <p>"The cloning process was seamless, and my new dog is just like my old buddy. It's incredible!"</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="testimonial-card">
-                        <img src="https://example.com/testimonial3.jpg" alt="Emma Wilson" class="testimonial-img">
+                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Emma Wilson" class="testimonial-img">
                         <h4>Emma Wilson</h4>
-                        <p>"GenePet has revolutionized pet ownership for allergy sufferers. I'm so grateful for this incredible technology!"</p>
+                        <p class="text-muted">Allergy Sufferer</p>
+                        <p>"I never thought I'd be able to have a pet. GenePet has changed my life for the better!"</p>
                     </div>
                 </div>
             </div>
@@ -287,14 +464,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4>GenePet</h4>
-                    <p>Creating hypoallergenic pet clones with love and science.</p>
+                    <p>Revolutionizing pet ownership through advanced genetic technology.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Quick Links</h4>
                     <ul class="list-unstyled">
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Our Process</a></li>
+                        <li><a href="#">FAQs</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -347,8 +524,20 @@
         // GSAP animations
         gsap.registerPlugin(ScrollTrigger);
 
-        // Feature icons animation
-        gsap.from('.feature-icon', {
+        // Hero section parallax effect
+        gsap.to('.hero', {
+            backgroundPosition: `50% ${innerHeight / 2}px`,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.hero',
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Feature cards animation
+        gsap.from('.feature-card', {
             scrollTrigger: {
                 trigger: '#features',
                 start: 'top center'
@@ -359,10 +548,10 @@
             duration: 1
         });
 
-        // Testimonial cards animation
-        gsap.from('.testimonial-card', {
+        // Process steps animation
+        gsap.from('.process-step', {
             scrollTrigger: {
-                trigger: '#testimonials',
+                trigger: '#how-it-works',
                 start: 'top center'
             },
             opacity: 0,
@@ -371,8 +560,8 @@
             duration: 1
         });
 
-// Benefits counter animation
-const benefitCounters = document.querySelectorAll('#benefits .display-4');
+        // Benefits counter animation
+        const benefitCounters = document.querySelectorAll('#benefits .display-4');
         benefitCounters.forEach(counter => {
             const target = parseInt(counter.innerText);
             gsap.to(counter, {
@@ -389,23 +578,15 @@ const benefitCounters = document.querySelectorAll('#benefits .display-4');
             });
         });
 
-        // Parallax effect for hero section
-        gsap.to('.hero', {
+        // Testimonial cards animation
+        gsap.from('.testimonial-card', {
             scrollTrigger: {
-                scrub: true
-            },
-            y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-            ease: 'none'
-        });
-
-        // How It Works section animation
-        gsap.from('#how-it-works .row', {
-            scrollTrigger: {
-                trigger: '#how-it-works',
+                trigger: '#testimonials',
                 start: 'top center'
             },
             opacity: 0,
             y: 50,
+            stagger: 0.2,
             duration: 1
         });
 
